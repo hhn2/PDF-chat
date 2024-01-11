@@ -56,7 +56,7 @@ def main():
         st.write(query)
         
         if query:
-            docs = VectorStore.similarity_search(query=query)
+            docs = VectorStore.similarity_search(query=query, k=3)
             
             llm = OpenAI(temperature=0,)
             chain = load_qa_chain(llm=llm, chain_type="stuff")
